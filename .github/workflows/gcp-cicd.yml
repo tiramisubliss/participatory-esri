@@ -8,8 +8,8 @@ env:
   PROJECT_ID: id-caslab-int
   GKE_CLUSTER: id-caslab
   GKE_ZONE: asia-southeast1-a
-  DEPLOYMENT_NAME: static-site
-  IMAGE: static-site
+  DEPLOYMENT_NAME: participatory-planning
+  IMAGE: participatory-planning
 
 jobs:
   setup-build-publish-deploy:
