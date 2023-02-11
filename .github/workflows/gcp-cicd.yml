@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "main" ]
 
+env:
   PROJECT_ID: id-caslab-int
   GKE_CLUSTER: id-caslab
   GKE_ZONE: asia-southeast1-a
