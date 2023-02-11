@@ -2,19 +2,19 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: participatory-planning
+  name: participatory
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: participatory-planning
+      app: participatory
   template:
     metadata:
       labels:
-        app: participatory-planning
+        app: participatory
     spec:
       containers:
-      - name: participatory-planning
+      - name: participatory
         image: gcr.io/PROJECT_ID/IMAGE:TAG
         resources:
           limits:
@@ -22,5 +22,5 @@ spec:
             cpu: "100m"
         imagePullPolicy: Always
         ports:
-        - name: participatory-planning
+        - name: participatory
           containerPort: 3000
