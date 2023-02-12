@@ -1,20 +1,17 @@
 FROM node:16-slim
 
-# Create and change to the app directory.
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
+
+RUN npm install && npm run build
+
 COPY . ./
 
-# Install production dependencies.
-RUN npm install
+FROM nginx:latest
 
-# Copy local code to the container image.
-COPY . ./
+COPY nginx.conf /etc/nginx/nginx.conf
 
-EXPOSE 3000
+COPY . /usr/share/nginx/html
 
-# Run the web service on container startup.
-CMD [ "npm", "start" ]
-
-
+COPY --from=0 /app/dist /usr/share/nginx/html
