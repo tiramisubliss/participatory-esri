@@ -3,9 +3,11 @@ FROM node:16-slim
 WORKDIR /app
 
 COPY package*.json ./
+COPY . ./
 
 RUN npm install
-RUn npm run build
+
+RUN npm run build
 
 COPY . ./
 
